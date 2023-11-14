@@ -1,0 +1,21 @@
+.theme-router {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+a {
+  all: unset;
+  background: aliceblue;
+  border-radius: 9999px;
+  padding: 10px 8px;
+  color: black;
+  transition: 0.5ms background-color;
+}
+
+a:hover {
+  cursor: pointer;
+  background: cornflowerblue;
+}
