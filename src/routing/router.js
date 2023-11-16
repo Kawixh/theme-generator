@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {DynamicTheme} from '@/pages/dynamic_theme';
 import {ManualTheme} from '@/pages/manual_theme';
 import {ThemeRouter} from "./theme_router";

@@ -1,0 +1,12 @@
+@mixin generate-log-padding-classes($n: 10, $base: 2) {
+  @for $i from 0 through $n {
+    .p-#{$i} {
+      padding: pow($base, $i) * 0.1rem;
+    }
+  }
+}
+
+
+:root {
+  @include generate-log-padding-classes();
+}

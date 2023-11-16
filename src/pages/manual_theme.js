@@ -1,12 +1,12 @@
-import { useLocation } from 'react-router-dom';
-
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+import {checkUrl} from "./dynamic_theme";
 
 export const ManualTheme = () => {
-  let query = useQuery();
-  let page = query.get('page');
+  let page;
+  const currentUrl = window.location.href;
+
+  if (checkUrl(currentUrl)) {
+    page = 'Manual'
+  }
 
   return (
     <div>

@@ -1,0 +1,82 @@
+// mixin to generate columns for grid
+@mixin generate-grid-columns-with-screen($num, $screen) {
+  @for $i from 1 through $num {
+    .#{$screen}\: {
+      &grid-cols-#{$i} {
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+      }
+
+      &col-span-#{$i} {
+        grid-column: span #{$i} / span #{$i};
+      }
+
+      &col-start-#{$i} {
+        grid-column-start: #{$i};
+      }
+
+      &col-end-#{$i} {
+        grid-column-end: #{$i};
+      }
+    }
+  }
+}
+
+@mixin generate-grid-columns($num) {
+  @for $i from 1 through $num {
+    .grid-cols-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+
+    .col-span-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+
+    .col-start-#{$i} {
+      grid-column-start: #{$i};
+    }
+
+    .col-end-#{$i} {
+      grid-column-end: #{$i};
+    }
+  }
+}
+
+:root {
+  .grid {
+    display: grid;
+  }
+
+  @include generate-grid-columns(9);
+
+  .col-auto {
+    grid-column: auto;
+  }
+
+  .col-span-full {
+    grid-column: 1 / -1;
+  }
+
+  .col-start-auto {
+    grid-column-start: auto;
+  }
+
+  .col-end-auto {
+    grid-column-end: auto;
+  }
+}
+
+@media (min-width: 640px) {
+  @include generate-grid-columns-with-screen(9, 'sm');
+}
+
+@media (min-width: 768px) {
+  @include generate-grid-columns-with-screen(9, 'md');
+}
+
+@media (min-width: 1024px) {
+  @include generate-grid-columns-with-screen(9, 'lg');
+}
+
+@media (min-width: 1280px) {
+  @include generate-grid-columns-with-screen(9, 'xl');
+}

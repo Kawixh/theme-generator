@@ -6,7 +6,7 @@
   margin-top: 10px;
 }
 
-a {
+.theme-router > a {
   all: unset;
   background: aliceblue;
   border-radius: 9999px;
@@ -15,7 +15,13 @@ a {
   transition: 0.5ms background-color;
 }
 
-a:hover {
+.theme-router > a.active {
+  background-color: cornflowerblue;
+  color: white;
+  font-weight: 500;
+}
+
+.theme-router > a:hover {
   cursor: pointer;
   background: cornflowerblue;
 }
