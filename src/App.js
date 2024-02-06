@@ -1,5 +1,5 @@
-import './styles/App.scss';
-import {AppRouter} from "./routing/router";
+import '@/styles/App.scss';
+import {AppRouter} from "@/routing/router";
 
 function App() {
   return (

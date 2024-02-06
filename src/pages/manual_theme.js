@@ -1,4 +1,4 @@
-import {checkUrl} from "./dynamic_theme";
+import {checkUrl} from "@/lib/utils";
 
 export const ManualTheme = () => {
   let page;
