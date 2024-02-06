@@ -2,14 +2,16 @@ import "@/styles/pages/dynamic_theme/main.scss";
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { IMG_URLS } from "@/lib/img_urls";
+import { applyDynamicTheme } from "@/lib/theme/apply";
 
 export const DynamicTheme = () => {
   const [selectedButton, setSelectedButton] = useState(null);
 
-  const handleClick = (src) => {
-    console.log("Clicked button image source:", src);
+  const handleClick = async (src) => {
     setSelectedButton(src);
-    // Add your logic here to handle the clicked button image source
+
+    let x = await  applyDynamicTheme(src);
+    console.log(x)
   };
 
   const renderButtons = () => {
